@@ -35,6 +35,11 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
+  gem 'rspec-rails' #for testing
+  gem 'capybara' #simulates user for automatic testing
+  gem 'guard-rspec' #automatically runs rake:test
+  gem 'libnotify' #notifications
+  gem 'hirb' #nice output in rails consol
 end
 
 group :development do
