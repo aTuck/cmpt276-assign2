@@ -16,6 +16,7 @@ body{
   width:100%;
   overflow:scroll;
   overflow-x:hidden;
+  background-image: url(/assets/cork_texture.jpg);
 }
 
 ul{
@@ -24,6 +25,7 @@ ul{
   padding: 0;
   overflow: hidden;
   background-color: #333;
+  box-shadow: 0 6px 8px rgba(0,0,0,.25);
 }
 
 li{
@@ -43,27 +45,52 @@ li{
   }
 }
 
+.info{
+  word-break: break-all;
+}
+
 .student{
-  margin-top:5px;
+  margin: 10px 10px 10px 10px;
+  padding-top: 20px;
+  color: black;
   display: inline-block;
   text-align: center;
   line-height: 1.5;
   vertical-align: middle;
   font-size: 20px;
-  font-family: "Arial";
-  border: 5px solid
+  font-family: 'Waiting for the Sunrise', cursive;
+  box-shadow: 0 3px 6px rgba(0,0,0,.25);
+  float: left;
+  position: relative;
+  transition: opacity 0.3s;
 }
 
 .student:hover .link{
-  transition: visibility 2s;
   visibility: visible;
+  opacity: 1.0;
 }
 
+.student .link{
+  transition: opacity 0.3s;
+  opacity: 0.0;
+}
+
+
 .link{
-  text-decoration: none;
   visibility: hidden;
+  opacity: 0.0;
+  margin-left: 4px;
+  margin-right: 4px;
+  margin-bottom: 10px;
+  font-size: 20px;
+  position:absolute;
+  width: 100%;
+  bottom:0;
+  left: 0;
+  word-spacing: 10px;
   //gets rid of underline on links
   a{text-decoration: none;}
+  a:hover{text-decoration: underline}
 }
 
 .field{
@@ -86,13 +113,13 @@ li{
 #notice{
   text-align: center;
   color: green;
-  margin: 20px;
+  margin: 14px;
   font-family: "Arial";
 }
 
 #alert{
   text-align: center;
   color: red;
-  margin: 20px;
+  margin: 14px;
   font-family: "Arial";
 }

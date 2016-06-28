@@ -7,6 +7,11 @@
 </div>
 
 <div class="field">
+<%= f.label :gpa, "GPA (0.0 - 4.3)" %><br/>
+<%= f.number_field :gpa, step: 0.1 %>
+</div>
+
+<div class="field">
 <%= f.label :weight, "Weight (100lb - 400lb)" %><br/>
 <%= f.number_field :weight %>
 </div>
@@ -16,15 +21,18 @@
 <%= f.number_field :height %>
 </div>
 
-<div class="field">
-<%= f.label :color %><br/>
-<%= f.color_field :color %>
-</div>
 
 <div class="field">
-<%= f.label :gpa, "GPA (0.0 - 4.3)" %><br/>
-<%= f.number_field :gpa, step: 0.1 %>
+<%= f.radio_button :color, '#add8e6', :checked => true%>
+<span class="colorLabelBlue"><%= f.label :color, 'blue'%>
+<%= f.radio_button :color, '#ffb6c1'%>
+<span class="colorLabelPink"><%= f.label :color, 'pink'%>
+<%= f.radio_button :color, '#FFFFA5'%>
+<span class="colorLabelYellow"><%= f.label :color, 'yellow'%>
+<%= f.radio_button :color, '#FDFDFD'%>
+<span class="colorLabelWhite"><%= f.label :color, 'white'%></span>
 </div>
+
 
 <div class="action">
 <%= f.submit "Create" %>
