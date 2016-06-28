@@ -16,32 +16,42 @@ class StudentsController < ApplicationController
   end
 
   def create
-    if @student = Student.create(params.require(:student).permit(:name, :weight, :height,
-                                                                :color, :gpa))
-      redirect_to students_path
-    else
-      redirect_to :back
+    @student = Student.new(student_params)
+      if @student.save
+        redirect_to students_path
+      else
+        redirect_to(new_student_path, alert: "Invalid properties, are there any blanks?")
+      end
     end
-  end
 
   def show #show a single student
     respond_to do |format|
       format.html
       format.json { render json: @student }
       format.xml  { render xml: @student  }
+    end
   end
 
   def update
+    if @student.update_attributes(params.require(:student).permit(
+      :name, :weight, :height, :color, :gpa))
+      redirect_to(students_path, notice: "Student successfully updated")
+    else
+      redirect_to(edit_student_path, alert: "Invalid properties, are there any blanks?")
+    end
   end
 
   def destroy
+    if @student.destroy
+      redirect_to(students_path, notice: "Student successfully destroyed")
+    else
+      redirect_to(students_path, alert: "Failed to destroy student")
+    end
   end
 
-  #prevents ForbiddenAttribute error when creating new student
   private
-    def student_params
-
-    end
-
-end
+  def student_params
+    params.require(:student).permit(
+      :name, :weight, :height, :color, :gpa)
+  end
 end

@@ -1,4 +1,4 @@
-<h1>Create a new student</h1>
+<h1 class="pageTitle">Create a new student</h1>
 
 <%= form_for @student do |f| %>
 <div class="field">
@@ -7,12 +7,12 @@
 </div>
 
 <div class="field">
-<%= f.label :weight %><br/>
+<%= f.label :weight, "Weight (100lb - 400lb)" %><br/>
 <%= f.number_field :weight %>
 </div>
 
 <div class="field">
-<%= f.label :height %><br/>
+<%= f.label :height, "Height (135cm-225cm)" %><br/>
 <%= f.number_field :height %>
 </div>
 
@@ -22,11 +22,11 @@
 </div>
 
 <div class="field">
-<%= f.label :gpa %><br/>
-<%= f.number_field :gpa %>
+<%= f.label :gpa, "GPA (0.0 - 4.3)" %><br/>
+<%= f.number_field :gpa, step: 0.1 %>
 </div>
 
-<div class="actions">
+<div class="action">
 <%= f.submit "Create" %>
 </div>
 <% end %>

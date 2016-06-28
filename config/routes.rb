@@ -4,5 +4,5 @@ Rails.application.routes.draw do
   resources :students
 
   get '/new_student' => 'students#new'
-  get '/all' => 'students#index', as: 'all_tweets'
+  get '/all' => 'students#index', as: 'all_students'
 end

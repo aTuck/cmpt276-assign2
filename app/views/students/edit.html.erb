@@ -1,0 +1,32 @@
+<h1 class="pageTitle">Edit student</h1>
+
+<%= form_for @student do |f| %>
+<div class="field">
+<%= f.label :name %><br/>
+<%= f.text_field :name %>
+</div>
+
+<div class="field">
+<%= f.label :weight, "Weight (100lb - 400lb)" %><br/>
+<%= f.number_field :weight %>
+</div>
+
+<div class="field">
+<%= f.label :height, "Height (135cm-225cm)" %><br/>
+<%= f.number_field :height %>
+</div>
+
+<div class="field">
+<%= f.label :color %><br/>
+<%= f.color_field :color %>
+</div>
+
+<div class="field">
+<%= f.label :gpa, "GPA (0.0 - 4.3)" %><br/>
+<%= f.number_field :gpa %>
+</div>
+
+<div class="action">
+<%= f.submit "Update" %>
+</div>
+<% end %>

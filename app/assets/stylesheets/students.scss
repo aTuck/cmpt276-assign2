@@ -1,3 +1,98 @@
 // Place all the styles related to the Students controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+html{
+  margin:0;
+  padding:0;
+  height:100%;
+  width:100%;
+  overflow:hidden;
+}
+
+body{
+  margin:0;
+  padding:0;
+  height:100%;
+  width:100%;
+  overflow:scroll;
+  overflow-x:hidden;
+}
+
+ul{
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+
+li{
+  float:left;
+  font-family: "Arial";
+
+  a{
+    display: inline-block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+
+  a:hover{
+    background-color:red;
+  }
+}
+
+.student{
+  margin-top:5px;
+  display: inline-block;
+  text-align: center;
+  line-height: 1.5;
+  vertical-align: middle;
+  font-size: 20px;
+  font-family: "Arial";
+  border: 5px solid
+}
+
+.student:hover .link{
+  transition: visibility 2s;
+  visibility: visible;
+}
+
+.link{
+  text-decoration: none;
+  visibility: hidden;
+  //gets rid of underline on links
+  a{text-decoration: none;}
+}
+
+.field{
+  width: 100%;
+  margin-bottom: 15px;
+  font-family: "Arial";
+  text-align: center;
+  line-height: 20px;
+  display: inline-block;
+}
+
+.action{
+  text-align: center;
+}
+
+.pageTitle{
+  text-align: center;
+}
+
+#notice{
+  text-align: center;
+  color: green;
+  margin: 20px;
+  font-family: "Arial";
+}
+
+#alert{
+  text-align: center;
+  color: red;
+  margin: 20px;
+  font-family: "Arial";
+}
