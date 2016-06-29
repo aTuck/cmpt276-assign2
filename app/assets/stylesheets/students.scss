@@ -6,12 +6,11 @@ html{
   padding:0;
   height:100%;
   width:100%;
-  overflow:hidden;
 }
 
 body{
   margin:0;
-  padding:0;
+  padding:56px 0px 0px 0px;
   height:100%;
   width:100%;
   overflow:scroll;
@@ -21,11 +20,16 @@ body{
 
 ul{
   list-style-type: none;
-  margin: 0;
+  margin:0;
   padding: 0;
   overflow: hidden;
   background-color: #333;
   box-shadow: 0 6px 8px rgba(0,0,0,.25);
+  position:fixed;
+  top:0;
+  left:0;
+  right:0;
+  z-index: 9999;
 }
 
 li{
@@ -51,18 +55,19 @@ li{
 
 .student{
   margin: 10px 10px 10px 10px;
-  padding-top: 20px;
+  padding-top: 35px;
   color: black;
   display: inline-block;
   text-align: center;
   line-height: 1.5;
   vertical-align: middle;
-  font-size: 20px;
+  font-size: 21px;
   font-family: 'Waiting for the Sunrise', cursive;
   box-shadow: 0 3px 6px rgba(0,0,0,.25);
   float: left;
   position: relative;
   transition: opacity 0.3s;
+  overflow: hidden;
 }
 
 .student:hover .link{
@@ -79,10 +84,8 @@ li{
 .link{
   visibility: hidden;
   opacity: 0.0;
-  margin-left: 4px;
-  margin-right: 4px;
-  margin-bottom: 10px;
-  font-size: 20px;
+  margin-bottom: 6px;
+  font-size: 16px;
   position:absolute;
   width: 100%;
   bottom:0;
@@ -96,18 +99,81 @@ li{
 .field{
   width: 100%;
   margin-bottom: 15px;
-  font-family: "Arial";
+  font-family: 'Waiting for the Sunrise', cursive;
+  font-size: 20px;
   text-align: center;
   line-height: 20px;
+  letter-spacing: 2px;
   display: inline-block;
+  font-weight: bold;
+
+  input{
+    background-color:transparent;
+    border:none;
+    border-bottom: solid 1px black;
+    margin-bottom:15px;
+    margin-top:0px;
+    font-family: 'Waiting for the Sunrise', cursive;
+    font-size: 20px;
+    text-align: center;
+  }
+
+  input:focus{
+    outline:none;
+  }
+
+  // turn off spinner selectors
+  input[type=number]::-webkit-inner-spin-button,
+  input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+  }
 }
 
 .action{
   text-align: center;
+
+  input{
+    font-family: 'Waiting for the Sunrise', cursive;
+    font-size: 23px;
+    padding: 14px 40px 14px 40px;
+    text-decoration: none;
+    border: none;
+    border-radius: 11px;
+    background: #3498db;
+  }
+
+  input:hover{
+    background: #3cb0fd;
+    text-decoration: none;
+  }
+  input:focus{
+    outline:none;
+  }
+  input:active{
+    background: #FFFFFF;
+  }
 }
 
 .pageTitle{
   text-align: center;
+  font-family: 'Waiting for the Sunrise', cursive;
+}
+
+.formPageWrapper{
+  width: 960px;
+  margin-top: 100px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.formPageBG{
+  width:50%;
+  margin: 0 auto;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  background-color: #ADD8E6;
+  box-shadow: 0 10px 15px rgba(0,0,0,.25);
 }
 
 #notice{
@@ -122,4 +188,9 @@ li{
   color: red;
   margin: 14px;
   font-family: "Arial";
+}
+
+#colorLabel.input{
+  margin-left: 8px;
+  margin-right: 0px;
 }

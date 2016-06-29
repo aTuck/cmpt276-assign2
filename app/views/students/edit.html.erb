@@ -1,9 +1,11 @@
+<div class="formPageWrapper">
+<div class="formPageBG">
 <h1 class="pageTitle">Edit student</h1>
 
-<%= form_for @student do |f| %>
+<%= form_for @student, html: {autocomplete: "off"} do |f| %>
 <div class="field">
 <%= f.label :name %><br/>
-<%= f.text_field :name %>
+<%= f.text_field :name, maxlength: 18 %>
 </div>
 
 <div class="field">
@@ -22,17 +24,19 @@
 </div>
 
 <div class="field">
-<%= f.radio_button :color, '#add8e6'%>
-<span class="colorLabelBlue"><%= f.label :color, 'blue'%>
-<%= f.radio_button :color, '#ffb6c1'%>
-<span class="colorLabelPink"><%= f.label :color, 'pink'%>
-<%= f.radio_button :color, '#FFFFA5'%>
-<span class="colorLabelYellow"><%= f.label :color, 'yellow'%>
-<%= f.radio_button :color, '#FDFDFD'%>
-<span class="colorLabelWhite"><%= f.label :color, 'white'%></span>
+<%= f.radio_button :color, '#ADD8E6', onClick: "changeColor('#ADD8E6')"%>
+<span class="colorLabelBlue" id="colorLabel"><%= f.label :color, 'Blue'%></span>
+<%= f.radio_button :color, '#FFB6C1', onClick: "changeColor('#FFB6C1')"%>
+<span class="colorLabelPink" id="colorLabel"><%= f.label :color, 'Pink'%></span>
+<%= f.radio_button :color, '#FFFFA5', onClick: "changeColor('#FFFFA5')"%>
+<span class="colorLabelYellow" id="colorLabel"><%= f.label :color, 'Yellow'%></span>
+<%= f.radio_button :color, '#FDFDFD', onClick: "changeColor('#FDFDFD')"%>
+<span class="colorLabelWhite" id="colorLabel"><%= f.label :color, 'White'%></span>
 </div>
 
 <div class="action">
 <%= f.submit "Update" %>
 </div>
 <% end %>
+</div>
+</div>
