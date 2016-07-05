@@ -2,9 +2,10 @@
 # All this logic will automatically be available in application.js.
 # You can use CoffeeScript in this file: http://coffeescript.org/
 root = exports ? this
-root.changeColor = (@color) ->
+$(document).ready(root.changeColor = (@color) ->
   switch @color
-     when "#ADD8E6" then $(".formPageBG").css({"background-color":"#ADD8E6"})
-     when "#FFB6C1" then $(".formPageBG").css({"background-color":"#FFB6C1"})
-     when "#FFFFA5" then $(".formPageBG").css({"background-color":"#FFFFA5"})
-     when "#FDFDFD" then $(".formPageBG").css({"background-color":"#FDFDFD"})
+     when "#ADD8E6" then $(".formPageBG").attr('style','background-color: #ADD8E6 !important')
+     when "#FFB6C1" then $(".formPageBG").attr('style','background-color: #FFB6C1 !important')
+     when "#FFFFA5" then $(".formPageBG").attr('style','background-color: #FFFFA5 !important')
+     when "#FDFDFD" then $(".formPageBG").attr('style','background-color: #FDFDFD !important')
+)

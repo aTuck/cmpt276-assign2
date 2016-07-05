@@ -1,2 +1,12 @@
-<h1><%= @student.name %></h1>
-<p>has a weight of <%= @student.weight %></p>
+<div class="viewWrapper">
+  <div class="student" id="showStudent" style="background-color: <%=@student.color%>;">
+    <div class="info">
+      <h2><%=@student.name%></h2>
+      GPA: <%=@student.gpa%></br>
+      Height: <%=@student.height%>cm</br>
+      Weight: <%=@student.weight%>lbs</br>
+      Color's hex value: <%=@student.color%>
+    </div>
+    <div class ="link"><%= link_to "Back", action: "index" %></div>
+  </div>
+</div>

@@ -1,6 +1,7 @@
 // Place all the styles related to the Students controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
 html{
   margin:0;
   padding:0;
@@ -10,11 +11,9 @@ html{
 
 body{
   margin:0;
-  padding:56px 0px 0px 0px;
+  padding:60px 0px 0px 0px;
   height:100%;
   width:100%;
-  overflow:scroll;
-  overflow-x:hidden;
   background-image: image-url("cork_texture.jpg");
 }
 
@@ -52,38 +51,119 @@ li{
 .info{
   word-break: break-all;
 }
-
+.pin {
+  background-color: #aaa;
+  height: 32px;
+  width: 2px;
+  position: absolute;
+  left: 50%;
+  top: -16px;
+  z-index: 2;
+  margin-bottom: 35px;
+}
+.pin:after {
+  background-image: radial-gradient(25% 25%, circle, hsla(0,0%,100%,.3), hsla(0,0%,0%,.3));
+  border-radius: 50%;
+  box-shadow: inset 0 0 0 1px hsla(0,0%,0%,.1),
+              inset 3px 3px 3px hsla(0,0%,100%,.2),
+              inset -3px -3px 3px hsla(0,0%,0%,.2),
+              23px 20px 3px hsla(0,0%,0%,.15);
+  content: '';
+  height: 12px;
+  left: -5px;
+  position: absolute;
+  top: -10px;
+  width: 12px;
+}
+.pin:before {
+  background-color: hsla(0,0%,0%,0.1);
+  box-shadow: 0 0 .25em hsla(0,0%,0%,.1);
+  content: '';
+  height: 24px;
+  width: 2px;
+  left: 0;
+  position: absolute;
+  top: 8px;
+  transform: rotate(57.5deg);
+  transform-origin: 50% 100%;
+}
 .student{
-  margin: 10px 10px 10px 10px;
+  margin: 15px 10px 10px 10px;
   padding-top: 35px;
   color: black;
   display: inline-block;
   text-align: center;
   line-height: 1.5;
-  vertical-align: middle;
   font-size: 21px;
   font-family: 'Waiting for the Sunrise', cursive;
   box-shadow: 0 3px 6px rgba(0,0,0,.25);
-  float: left;
+  transition: all 0.3s ease-in-out;
+  column-break-inside:avoid;
   position: relative;
-  transition: opacity 0.3s;
-  overflow: hidden;
 }
+#showStudent{
+  margin: 15px 10px 10px 10px;
+  padding: 0px 0px 0px 0px;
+  color: black;
+  display: inline-block;
+  text-align: center;
+  line-height: 1.5;
+  font-size: 18px;
+  font-family: 'Waiting for the Sunrise', cursive;
+  box-shadow: 0 3px 6px rgba(0,0,0,.25);
+  transition: all 0.3s ease-in-out;
+  width: 420px;
+  height: 300px;
+}
+.student:nth-of-type(n){
+  transform: rotate(-2deg);
+  position: relative;
+}
+.student:nth-of-type(2n){
+  transform: rotate(3deg);
+  position: relative;
+}
+.student:nth-of-type(2n+1){
+  transform: rotate(1.5deg);
+  position: relative;
+}
+.student:nth-of-type(3n){
+  transform: rotate(-3deg);
+  position: relative;
 
+}
+.student:nth-of-type(3n+1){
+  transform: rotate(-1.5deg);
+  position: relative;
+
+}
+.student:nth-child(n) .pin:after{
+  background-color: #FF0000; // red pin
+}
+.student:nth-child(2n) .pin:after{
+  background-color: #1414FF; // blue pin
+}
+.student:nth-child(3n) .pin:after{
+  background-color: #00FF00; // green pin
+}
+.student:hover{
+  box-shadow: 0 6px 12px rgba(0,0,0,.75);
+  transform: scale(1.1);
+  transition: scale 0.3 ease-in-out, box-shadow 0.3s ease-in-out;
+}
 .student:hover .link{
   visibility: visible;
   opacity: 1.0;
 }
-
 .student .link{
-  transition: opacity 0.3s;
+  transition: all 0.3s ease-in-out;
   opacity: 0.0;
 }
-
 
 .link{
   visibility: hidden;
   opacity: 0.0;
+  margin-top: 10px;
   margin-bottom: 6px;
   font-size: 16px;
   position:absolute;
@@ -138,20 +218,23 @@ li{
     font-size: 23px;
     padding: 14px 40px 14px 40px;
     text-decoration: none;
-    border: none;
+    border: 3px solid #000000;
     border-radius: 11px;
-    background: #3498db;
+    box-shadow: 0 6px #27496d;
   }
 
   input:hover{
-    background: #3cb0fd;
     text-decoration: none;
+    cursor: pointer;
   }
   input:focus{
     outline:none;
   }
   input:active{
-    background: #FFFFFF;
+    cursor: pointer;
+    // box-shadow: inset 0 0 0 1px #27496d,inset 0 5px 30px #193047;
+    box-shadow: 0 3px #27496d;
+    transform: translateY(3px);
   }
 }
 
@@ -174,6 +257,43 @@ li{
   padding-bottom: 40px;
   background-color: #ADD8E6;
   box-shadow: 0 10px 15px rgba(0,0,0,.25);
+}
+
+.viewWrapper{
+  margin:auto;
+  width:100%;
+  position:absolute;
+  text-align:center;
+}
+
+#notes{
+  column-count: 5;
+  column-gap: 10px;
+  column-width: 460px;
+  column-fill: auto;
+  overflow: visible;
+  margin-top: 10px;
+}
+
+@media (max-width: 1840px){
+  #notes{
+    column-count: 4 460px;
+  }
+}
+@media (max-width: 1380px){
+  #notes{
+    column-count: 3 460px;
+  }
+}
+@media (max-width: 920px){
+  #notes{
+    column-count: 2 460px;
+  }
+}
+@media (max-width: 460px){
+  #notes{
+    column-count: 1 460px;
+  }
 }
 
 #notice{

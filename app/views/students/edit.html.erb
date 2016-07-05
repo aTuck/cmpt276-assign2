@@ -1,5 +1,6 @@
+
 <div class="formPageWrapper">
-<div class="formPageBG">
+<div class="formPageBG" id="formPageBG" style="background-color: <%=@student.color%>">
 <h1 class="pageTitle">Edit student</h1>
 
 <%= form_for @student, html: {autocomplete: "off"} do |f| %>
@@ -35,7 +36,7 @@
 </div>
 
 <div class="action">
-<%= f.submit "Update" %>
+  <%= f.submit "Update", style: "background-color: #{@student.color}"%>
 </div>
 <% end %>
 </div>

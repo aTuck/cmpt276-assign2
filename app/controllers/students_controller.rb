@@ -9,6 +9,7 @@ class StudentsController < ApplicationController
   end
 
   def edit #show an edit format
+    @color = @student.color
   end
 
   def new #new student form

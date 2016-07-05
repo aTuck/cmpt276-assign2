@@ -1,7 +1,9 @@
 
+<div id="notes">
 <% @students.each do |s| %>
 <div class="student" style="height:<%=s.height%>px;
   width:<%=s.weight%>px; background-color: <%=s.color%>;">
+  <div class="pin"></div>
   <div class="info">
     <%=s.name.titleize%><br/>
     GPA: <%=s.gpa%>
@@ -9,10 +11,11 @@
   <span class ="link">
     <%= link_to "Edit", edit_student_path(s) %>
     <%= link_to "Destroy", s, method: :delete %>
+    <%= link_to "View", student_path(s) %>
   </span>
 </div>
 <% end %>
-
-<!-- sends ruby data to javascript.coffee -->
+</div>
+<!-- sends ruby data to javascript.coffee
 <%= content_tag "div", id: "students", data: {students: Student.all} do %>
-<%end%>
+<%end%> -->
