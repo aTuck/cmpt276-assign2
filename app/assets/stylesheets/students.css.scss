@@ -58,7 +58,7 @@ li{
   position: absolute;
   left: 50%;
   top: -16px;
-  z-index: 2;
+  z-index: 4;
   margin-bottom: 35px;
 }
 .pin:after {
@@ -88,7 +88,7 @@ li{
   transform-origin: 50% 100%;
 }
 .student{
-  margin: 15px 10px 10px 10px;
+  margin: 15px 20px 10px 20px;
   padding-top: 35px;
   color: black;
   display: inline-block;
@@ -97,9 +97,10 @@ li{
   font-size: 21px;
   font-family: 'Waiting for the Sunrise', cursive;
   box-shadow: 0 3px 6px rgba(0,0,0,.25);
-  transition: all 0.3s ease-in-out;
+  transition: all 0.1s ease-in-out;
   column-break-inside:avoid;
   position: relative;
+  column-span: all;
 }
 #showStudent{
   margin: 15px 10px 10px 10px;
@@ -111,7 +112,7 @@ li{
   font-size: 18px;
   font-family: 'Waiting for the Sunrise', cursive;
   box-shadow: 0 3px 6px rgba(0,0,0,.25);
-  transition: all 0.3s ease-in-out;
+  transition: all 0.1s ease-in-out;
   width: 420px;
   height: 300px;
 }
@@ -124,7 +125,7 @@ li{
   position: relative;
 }
 .student:nth-of-type(2n+1){
-  transform: rotate(1.5deg);
+  transform: rotate(-1.5deg);
   position: relative;
 }
 .student:nth-of-type(3n){
@@ -133,7 +134,7 @@ li{
 
 }
 .student:nth-of-type(3n+1){
-  transform: rotate(-1.5deg);
+  transform: rotate(1.5deg);
   position: relative;
 
 }
@@ -149,14 +150,14 @@ li{
 .student:hover{
   box-shadow: 0 6px 12px rgba(0,0,0,.75);
   transform: scale(1.1);
-  transition: scale 0.3 ease-in-out, box-shadow 0.3s ease-in-out;
+  transition: scale 0.1 ease-in-out, box-shadow 0.1s ease-in-out;
 }
 .student:hover .link{
   visibility: visible;
   opacity: 1.0;
 }
 .student .link{
-  transition: all 0.3s ease-in-out;
+  transition: all 0.1s ease-in-out;
   opacity: 0.0;
 }
 
@@ -268,11 +269,11 @@ li{
 
 #notes{
   column-count: 5;
-  column-gap: 10px;
   column-width: 460px;
   column-fill: auto;
-  overflow: visible;
+  overflow: auto;
   margin-top: 10px;
+  padding-bottom: 10px;
 }
 
 @media (max-width: 1840px){
