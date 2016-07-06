@@ -3,7 +3,7 @@
 <% @students.each do |s| %>
 <div class="student" style="height:<%=s.height%>px;
   width:<%=s.weight%>px; background-color: <%=s.color%>;">
-  <div class="pin"></div>
+  <div class="pin"></div><div></div>
   <div class="info">
     <%=s.name.titleize%><br/>
     GPA: <%=s.gpa%>
@@ -13,6 +13,7 @@
     <%= link_to "Destroy", s, method: :delete %>
     <%= link_to "View", student_path(s) %>
   </span>
+  <div class="pin"></div>
 </div>
 <% end %>
 </div>

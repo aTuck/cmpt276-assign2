@@ -1,0 +1,382 @@
+/* line 5, /home/adam/Desktop/Assign2/app/assets/stylesheets/students.css.scss */
+html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+}
+
+/* line 12, /home/adam/Desktop/Assign2/app/assets/stylesheets/students.css.scss */
+body {
+  margin: 0;
+  padding: 60px 0px 0px 0px;
+  height: 100%;
+  width: 100%;
+  background-image: url(/assets/cork_texture-3d12962c5911796d6b7493e034af40dc5030244e3edcf5a9f1a5402080b4e49b.jpg);
+}
+
+/* line 20, /home/adam/Desktop/Assign2/app/assets/stylesheets/students.css.scss */
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.25);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 9999;
+}
+
+/* line 34, /home/adam/Desktop/Assign2/app/assets/stylesheets/students.css.scss */
+li {
+  float: left;
+  font-family: "Arial";
+}
+/* line 38, /home/adam/Desktop/Assign2/app/assets/stylesheets/students.css.scss */
+li a {
+  display: inline-block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+/* line 46, /home/adam/Desktop/Assign2/app/assets/stylesheets/students.css.scss */
+li a:hover {
+  background-color: red;
+}
+
+/* line 51, /home/adam/Desktop/Assign2/app/assets/stylesheets/students.css.scss */
+.info {
+  word-break: break-all;
+}
+
+/* line 54, /home/adam/Desktop/Assign2/app/assets/stylesheets/students.css.scss */
+.student {
+  margin: 15px 20px 10px 20px;
+  padding-top: 35px;
+  color: black;
+  display: inline-block;
+  text-align: center;
+  line-height: 1.5;
+  font-size: 21px;
+  font-family: 'Waiting for the Sunrise', cursive;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.25);
+  transition: all 0.1s ease-in-out;
+  column-break-inside: avoid;
+  position: relative;
+  -webkit-backface-visibility: hidden;
+}
+
+/* line 69, /home/adam/Desktop/Assign2/app/assets/stylesheets/students.css.scss */
+#showStudent {
+  margin: 15px 10px 10px 10px;
+  padding: 0px 0px 0px 0px;
+  color: black;
+  display: inline-block;
+  text-align: center;
+  line-height: 1.5;
+  font-size: 18px;
+  font-family: 'Waiting for the Sunrise', cursive;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.25);
+  transition: all 0.1s ease-in-out;
+  width: 420px;
+  height: 300px;
+}
+
+/* line 83, /home/adam/Desktop/Assign2/app/assets/stylesheets/students.css.scss */
+.student:nth-of-type(n) {
+  transform: rotate(-2deg);
+  position: relative;
+}
+
+/* line 87, /home/adam/Desktop/Assign2/app/assets/stylesheets/students.css.scss */
+.student:nth-of-type(2n) {
+  transform: rotate(3deg);
+  position: relative;
+}
+
+/* line 91, /home/adam/Desktop/Assign2/app/assets/stylesheets/students.css.scss */
+.student:nth-of-type(2n+1) {
+  transform: rotate(-1.5deg);
+  position: relative;
+}
+
+/* line 95, /home/adam/Desktop/Assign2/app/assets/stylesheets/students.css.scss */
+.student:nth-of-type(3n) {
+  transform: rotate(-3deg);
+  position: relative;
+}
+
+/* line 100, /home/adam/Desktop/Assign2/app/assets/stylesheets/students.css.scss */
+.student:nth-of-type(3n+1) {
+  transform: rotate(1.5deg);
+  position: relative;
+}
+
+/* line 105, /home/adam/Desktop/Assign2/app/assets/stylesheets/students.css.scss */
+.student:nth-child(n) .pin:after {
+  background-color: #FF0000;
+}
+
+/* line 108, /home/adam/Desktop/Assign2/app/assets/stylesheets/students.css.scss */
+.student:nth-child(2n) .pin:after {
+  background-color: #1414FF;
+}
+
+/* line 111, /home/adam/Desktop/Assign2/app/assets/stylesheets/students.css.scss */
+.student:nth-child(3n) .pin:after {
+  background-color: #00FF00;
+}
+
+/* line 114, /home/adam/Desktop/Assign2/app/assets/stylesheets/students.css.scss */
+.student:hover {
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.75);
+  transform: scale(1.1);
+  transition: scale 0.1 ease-in-out, box-shadow 0.1s ease-in-out;
+}
+
+/* line 119, /home/adam/Desktop/Assign2/app/assets/stylesheets/students.css.scss */
+.student:hover .link {
+  visibility: visible;
+  opacity: 1.0;
+}
+
+/* line 123, /home/adam/Desktop/Assign2/app/assets/stylesheets/students.css.scss */
+.student .link {
+  transition: all 0.1s ease-in-out;
+  opacity: 0.0;
+}
+
+/* line 128, /home/adam/Desktop/Assign2/app/assets/stylesheets/students.css.scss */
+.link {
+  visibility: hidden;
+  opacity: 0.0;
+  margin-top: 10px;
+  margin-bottom: 6px;
+  font-size: 16px;
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+  word-spacing: 10px;
+}
+/* line 140, /home/adam/Desktop/Assign2/app/assets/stylesheets/students.css.scss */
+.link a {
+  text-decoration: none;
+}
+/* line 141, /home/adam/Desktop/Assign2/app/assets/stylesheets/students.css.scss */
+.link a:hover {
+  text-decoration: underline;
+}
+
+/* line 144, /home/adam/Desktop/Assign2/app/assets/stylesheets/students.css.scss */
+.field {
+  width: 100%;
+  margin-bottom: 15px;
+  font-family: 'Waiting for the Sunrise', cursive;
+  font-size: 20px;
+  text-align: center;
+  line-height: 20px;
+  letter-spacing: 2px;
+  display: inline-block;
+  font-weight: bold;
+}
+/* line 155, /home/adam/Desktop/Assign2/app/assets/stylesheets/students.css.scss */
+.field input {
+  background-color: transparent;
+  border: none;
+  border-bottom: solid 1px black;
+  margin-bottom: 15px;
+  margin-top: 0px;
+  font-family: 'Waiting for the Sunrise', cursive;
+  font-size: 20px;
+  text-align: center;
+}
+/* line 166, /home/adam/Desktop/Assign2/app/assets/stylesheets/students.css.scss */
+.field input:focus {
+  outline: none;
+}
+/* line 171, /home/adam/Desktop/Assign2/app/assets/stylesheets/students.css.scss */
+.field input[type=number]::-webkit-inner-spin-button,
+.field input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* line 178, /home/adam/Desktop/Assign2/app/assets/stylesheets/students.css.scss */
+.action {
+  text-align: center;
+}
+/* line 181, /home/adam/Desktop/Assign2/app/assets/stylesheets/students.css.scss */
+.action input {
+  font-family: 'Waiting for the Sunrise', cursive;
+  font-size: 23px;
+  padding: 14px 40px 14px 40px;
+  text-decoration: none;
+  border: 3px solid #000000;
+  border-radius: 11px;
+  box-shadow: 0 6px #27496d;
+}
+/* line 191, /home/adam/Desktop/Assign2/app/assets/stylesheets/students.css.scss */
+.action input:hover {
+  text-decoration: none;
+  cursor: pointer;
+}
+/* line 195, /home/adam/Desktop/Assign2/app/assets/stylesheets/students.css.scss */
+.action input:focus {
+  outline: none;
+}
+/* line 198, /home/adam/Desktop/Assign2/app/assets/stylesheets/students.css.scss */
+.action input:active {
+  cursor: pointer;
+  box-shadow: 0 3px #27496d;
+  transform: translateY(3px);
+}
+
+/* line 206, /home/adam/Desktop/Assign2/app/assets/stylesheets/students.css.scss */
+.pageTitle {
+  text-align: center;
+  font-family: 'Waiting for the Sunrise', cursive;
+}
+
+/* line 211, /home/adam/Desktop/Assign2/app/assets/stylesheets/students.css.scss */
+.formPageWrapper {
+  width: 960px;
+  margin-top: 100px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* line 218, /home/adam/Desktop/Assign2/app/assets/stylesheets/students.css.scss */
+.formPageBG {
+  width: 50%;
+  margin: 0 auto;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  background-color: #ADD8E6;
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.25);
+}
+
+/* line 227, /home/adam/Desktop/Assign2/app/assets/stylesheets/students.css.scss */
+.viewWrapper {
+  margin: auto;
+  width: 100%;
+  position: absolute;
+  text-align: center;
+}
+
+/* line 234, /home/adam/Desktop/Assign2/app/assets/stylesheets/students.css.scss */
+#notes {
+  column-count: 5;
+  column-width: 460px;
+  column-fill: auto;
+  overflow: auto;
+  margin-top: 10px;
+  padding-top: 20px;
+  padding-bottom: 10px;
+}
+
+@media (max-width: 1840px) {
+  /* line 245, /home/adam/Desktop/Assign2/app/assets/stylesheets/students.css.scss */
+  #notes {
+    column-count: 4 460px;
+  }
+}
+@media (max-width: 1380px) {
+  /* line 250, /home/adam/Desktop/Assign2/app/assets/stylesheets/students.css.scss */
+  #notes {
+    column-count: 3 460px;
+  }
+}
+@media (max-width: 920px) {
+  /* line 255, /home/adam/Desktop/Assign2/app/assets/stylesheets/students.css.scss */
+  #notes {
+    column-count: 2 460px;
+  }
+}
+@media (max-width: 460px) {
+  /* line 260, /home/adam/Desktop/Assign2/app/assets/stylesheets/students.css.scss */
+  #notes {
+    column-count: 1 460px;
+  }
+}
+/* line 265, /home/adam/Desktop/Assign2/app/assets/stylesheets/students.css.scss */
+#notice {
+  text-align: center;
+  color: green;
+  margin: 14px;
+  font-family: "Arial";
+}
+
+/* line 272, /home/adam/Desktop/Assign2/app/assets/stylesheets/students.css.scss */
+#alert {
+  text-align: center;
+  color: red;
+  margin: 14px;
+  font-family: "Arial";
+}
+
+/* line 279, /home/adam/Desktop/Assign2/app/assets/stylesheets/students.css.scss */
+#colorLabel.input {
+  margin-left: 8px;
+  margin-right: 0px;
+}
+
+/* line 284, /home/adam/Desktop/Assign2/app/assets/stylesheets/students.css.scss */
+.pin {
+  background-color: #aaa;
+  height: 32px;
+  width: 2px;
+  position: absolute;
+  left: 50%;
+  top: -16px;
+  z-index: 4;
+  margin-bottom: 35px;
+  margin-top: 12px;
+}
+
+/* line 295, /home/adam/Desktop/Assign2/app/assets/stylesheets/students.css.scss */
+.pin:after {
+  background-image: radial-gradient(25% 25%, circle, rgba(255, 255, 255, 0.3), rgba(0, 0, 0, 0.3));
+  border-radius: 50%;
+  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.1), inset 3px 3px 3px rgba(255, 255, 255, 0.2), inset -3px -3px 3px rgba(0, 0, 0, 0.2), 23px 20px 3px rgba(0, 0, 0, 0.15);
+  content: '';
+  height: 12px;
+  left: -5px;
+  position: absolute;
+  top: -10px;
+  width: 12px;
+}
+
+/* line 309, /home/adam/Desktop/Assign2/app/assets/stylesheets/students.css.scss */
+.pin:before {
+  background-color: rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 0.25em rgba(0, 0, 0, 0.1);
+  content: '';
+  height: 24px;
+  width: 2px;
+  left: 0;
+  position: absolute;
+  top: 8px;
+  transform: rotate(57.5deg);
+  transform-origin: 50% 100%;
+}
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+
+
+ */
+
