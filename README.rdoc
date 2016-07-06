@@ -1,3 +1,22 @@
 CMPT276 - Assignment2
+Adam Tuck - 301232782
 
-Will add features to this document when done assignment
+*Functionality*
+  *Users can create, edit, destroy, and view students objects which are displayed
+  *"View" gives additional information on a student than what's provided on main index page
+  *Height, weight, color, dictate how the user's sticky note looks
+  *Model validations to prevent incorrect input
+  *Flash messages in navigation bar to notify user on successful or failed actions
+
+*Styling*
+  *Uses Google Font API to get hand-written looking font
+  *Uses :before and :after pseudo-elements to create pins for sticky notes
+    *Pin colors are randomly applied
+  *Fixed navigation bar present to navigate through web page from any other page
+  *Used Jquery to change background of edit page background depending on which radio button is selected
+  *All students visible in a dynamic column structure that is based off of window size made in css
+  *Hovering over a student displays links "Edit, Destroy, View", scales sticky note up,
+   and adds box shadow
+    *Links show underline when hovered over, otherwise don't
+  *All sticky notes randomly rotated to give a more realistic feel using
+   css nth-of-type property
